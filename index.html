@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏛️ 유치부·초등 저학년이 가기 좋은 박물관 30곳 | 투빈맘</title>
+<style>
+  :root {
+    --primary: #ff6b9d;
+    --primary-light: #fff0f6;
+    --free: #22c55e;
+    --paid: #f97316;
+    --region1: #3b82f6;
+    --region2: #8b5cf6;
+    --region3: #10b981;
+    --region4: #06b6d4;
+    --region5: #f59e0b;
+    --region6: #ef4444;
+    --region7: #ec4899;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --card-hover-shadow: 0 8px 30px rgba(0,0,0,0.13);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 50%, #818cf8 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 24px 48px;
+  }
+  .hero-icon { font-size: 56px; margin-bottom: 12px; }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .hero-sub {
+    font-size: 15px;
+    opacity: 0.92;
+    max-width: 560px;
+    margin: 0 auto 20px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── INTRO CALLOUT ── */
+  .intro-callout {
+    background: #fffbeb;
+    border: 1.5px solid #fde68a;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 28px auto;
+    max-width: 860px;
+    font-size: 14.5px;
+    line-height: 1.8;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* ── TOC ── */
+  .toc {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 32px;
+    border-top: 4px solid var(--primary);
+  }
+  .toc h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--primary);
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: background 0.15s, transform 0.15s;
+    border: 1px solid var(--border);
+  }
+  .toc-item:hover { background: var(--primary-light); transform: translateY(-1px); color: var(--primary); }
+  .toc-item .count {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg);
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+
+  /* ── REGION SECTION ── */
+  .region { margin-bottom: 48px; }
+  .region-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+  }
+  .region-header .region-count {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.25);
+    padding: 3px 12px;
+    border-radius: 999px;
+  }
+
+  /* ── MUSEUM CARD ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+  }
+  .card-img-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56%;
+    overflow: hidden;
+    background: #f1f5f9;
+  }
+  .card-img-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s;
+  }
+  .card:hover .card-img-wrap img { transform: scale(1.04); }
+  .card-num {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    backdrop-filter: blur(3px);
+  }
+  .card-body {
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 3px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .card-location {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+  .card-desc strong { color: var(--text); }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+  .price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .price-free { background: #dcfce7; color: #15803d; }
+  .price-paid { background: #ffedd5; color: #c2410c; }
+  .price-mixed { background: #f0fdf4; color: #166534; border: 1px dashed #86efac; }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #03c75a;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 10px;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .map-btn:hover { background: #02a84a; transform: scale(1.03); }
+
+  /* ── FOOTER ── */
+  .footer-callout {
+    background: #fffbeb;
+    border: 1.5px solid #fde68a;
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    max-width: 860px;
+    margin: 40px auto 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .footer-callout a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .footer-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 14px;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .footer-ig:hover { opacity: 0.88; transform: scale(1.03); }
+
+  .copyright {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .notion-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f0f0ef;
+    border-bottom: 1px solid #e0e0df;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #37352f;
+  }
+  .notion-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: white;
+    border: 1px solid #d0cfc9;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #37352f;
+    text-decoration: none;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+  .notion-bar a:hover { background: #f7f6f3; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  .notion-bar-bottom {
+    background: #f8f8f7;
+    border-top: 1px solid #e0e0df;
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 860px;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: 13.5px;
+    color: #37352f;
+  }
+  .notion-bar-bottom a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #37352f;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .notion-bar-bottom a:hover { opacity: 0.85; transform: scale(1.03); }
+
+  .summary-bar {
+    background: white;
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 36px;
+  }
+  .summary-bar strong { color: var(--primary); }
+
+  /* ── SCROLL TO TOP ── */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255,107,157,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 100;
+    opacity: 0;
+  }
+  .scroll-top.visible { opacity: 1; }
+  .scroll-top:hover { transform: scale(1.1); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 16px 36px; }
+    .cards { grid-template-columns: 1fr; }
+    .toc-grid { grid-template-columns: 1fr 1fr; }
+    .card-footer { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NOTION BAR TOP -->
+<div class="notion-bar">
+  <span>📝 노션 원본에서 보기</span>
+  <a href="https://app.notion.com/p/390a9b27793981f88425fa7d332af83d" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#37352f"/><path d="M6 5.5C6 4.67 6.67 4 7.5 4H16.5C17.33 4 18 4.67 18 5.5V18.5C18 19.33 17.33 20 16.5 20H7.5C6.67 20 6 19.33 6 18.5V5.5Z" fill="white"/><path d="M9 8H15M9 11H15M9 14H13" stroke="#37352f" stroke-width="1.5" stroke-linecap="round"/></svg>
+    노션에서 원본 보기
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">🏛️</div>
+  <h1>유치부·초등 저학년이<br>가기 좋은 박물관 30곳</h1>
+  <p class="hero-sub">오감으로 체험하고 놀면서 자연스럽게 배우는 전국 박물관을 지역별로 정리했어요! 유치부(5~7세)부터 초등 저학년(1~3학년)까지 모두 즐길 수 있는 곳만 엄선✨</p>
+  <span class="hero-badge">👩‍👧 투빈맘 @2bin_mom</span>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro-callout">
+    <strong>안녕하세요~ 투빈맘이에요! 👋</strong><br>
+    아이와 방학에 어디 갈지 고민될 때, 박물관만큼 좋은 곳이 없더라고요 😊<br>
+    다가오는 여름방학, 알차게 보내보아요 🏛️💖
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>📋 목차</h2>
+    <div class="toc-grid">
+      <a href="#region1" class="toc-item">🏙️ 서울권역<span class="count">9곳</span></a>
+      <a href="#region2" class="toc-item">🌾 경기·인천권역<span class="count">6곳</span></a>
+      <a href="#region3" class="toc-item">🌿 대전·충청권역<span class="count">4곳</span></a>
+      <a href="#region4" class="toc-item">🌲 강원권역<span class="count">3곳</span></a>
+      <a href="#region5" class="toc-item">🌊 전라·광주권역<span class="count">3곳</span></a>
+      <a href="#region6" class="toc-item">🏔️ 경상·부산·대구권역<span class="count">4곳</span></a>
+      <a href="#region7" class="toc-item">🌺 제주권역<span class="count">1곳</span></a>
+    </div>
+  </div>
+
+  <div class="summary-bar">📌 총 <strong>30곳</strong> | 서울 9 · 경기인천 6 · 대전충청 4 · 강원 3 · 전라광주 3 · 경상부산대구 4 · 제주 1</div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 1: 서울 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region1">
+    <div class="region-header" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+      🏙️ 서울권역
+      <span class="region-count">9곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.1</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/National_Museum_of_Korea%2C_Seoul_%282%29_%2840236586235%29.jpg/960px-National_Museum_of_Korea%2C_Seoul_%282%29_%2840236586235%29.jpg" alt="국립중앙박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립중앙박물관 어린이박물관</div>
+          <div class="card-location">📍 서울 용산</div>
+          <div class="card-desc">유물을 직접 만지고 놀며 배우는 <strong>국내 대표 어린이박물관</strong>. 고대~조선 시대 유물을 오감으로 체험하는 체험형 전시 공간.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EC%A4%91%EC%95%99%EB%B0%95%EB%AC%BC%EA%B4%80%20%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.2</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Korea-Seoul-National.folk.museum-01.JPG/960px-Korea-Seoul-National.folk.museum-01.JPG" alt="국립민속박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립민속박물관 어린이박물관</div>
+          <div class="card-location">📍 서울 종로</div>
+          <div class="card-desc">우리 조상들의 전통 생활문화를 직접 체험하는 <strong>어린이 전용 박물관</strong>. 세시풍속·전통 놀이·먹거리 등 생활 속 민속 문화를 즐겁게 배울 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EB%AF%BC%EC%86%8D%EB%B0%95%EB%AC%BC%EA%B4%80%20%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.3</span>
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/%EA%B5%AD%EB%A6%BD%ED%95%9C%EA%B8%80%EB%B0%95%EB%AC%BC%EA%B4%80%EA%B1%B4%EB%AC%BC_%281%29.jpg/960px-%EA%B5%AD%EB%A6%BD%ED%95%9C%EA%B8%80%EB%B0%95%EB%AC%BC%EA%B4%80%EA%B1%B4%EB%AC%BC_%281%29.jpg" alt="국립한글박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립한글박물관 한글 놀이터</div>
+          <div class="card-location">📍 서울 용산</div>
+          <div class="card-desc">한글의 창제 원리와 다양한 쓰임을 놀이로 배우는 <strong>어린이 체험 공간</strong>. 자음·모음 탐험부터 디지털 한글 놀이까지 풍부하게 즐길 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/p/search/%EA%B5%AD%EB%A6%BD%ED%95%9C%EA%B8%80%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.4</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Seoul_National_Science_Museum_Oct_2014.JPG/960px-Seoul_National_Science_Museum_Oct_2014.JPG" alt="국립어린이과학관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립어린이과학관</div>
+          <div class="card-location">📍 서울 종로</div>
+          <div class="card-desc">과학 원리를 놀이로 배우는 <strong>어린이 전용 국립 과학관</strong>. 다양한 조작 전시와 특별 전시를 통해 호기심과 탐구심을 마음껏 키울 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-mixed">🎫 무료(6세이하) / 1,000원(7~18세)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EC%96%B4%EB%A6%B0%EC%9D%B4%EA%B3%BC%ED%95%99%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.5</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Seoul_Museum_of_History.JPG/960px-Seoul_Museum_of_History.JPG" alt="서울역사박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">서울역사박물관</div>
+          <div class="card-location">📍 서울 종로</div>
+          <div class="card-desc">조선 시대부터 현대까지 <strong>서울의 변천사</strong>를 한눈에 볼 수 있는 박물관. 어린이 전용 체험 공간도 마련되어 있어 가족 나들이 코스로 인기.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%97%AD%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.6</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg/960px-%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg" alt="국립항공박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립항공박물관</div>
+          <div class="card-location">📍 서울 강서</div>
+          <div class="card-desc">대한민국 항공 역사와 미래 기술을 체험하는 <strong>국내 유일 국립 항공 전문 박물관</strong>. 실제 비행기 조종석 체험과 비행 시뮬레이터가 아이들에게 특히 인기.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.7</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%EC%84%9C%EC%9A%B8%EC%83%81%EC%83%81%EB%82%98%EB%9D%BC.jpg/960px-%EC%84%9C%EC%9A%B8%EC%83%81%EC%83%81%EB%82%98%EB%9D%BC.jpg" alt="서울상상나라" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">서울상상나라</div>
+          <div class="card-location">📍 서울 광진</div>
+          <div class="card-desc">0~7세 영유아 및 초등 저학년을 위한 <strong>체험 중심 어린이 박물관</strong>. 자연·과학·예술 등 다양한 테마관에서 창의력을 자유롭게 키울 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 4,000원 (36개월↑)</span>
+            <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%83%81%EC%83%81%EB%82%98%EB%9D%BC%20%EA%B4%91%EC%A7%84" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.8</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/BankofKoreaMuseum.jpg/960px-BankofKoreaMuseum.jpg" alt="한국은행 화폐박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">한국은행 화폐박물관</div>
+          <div class="card-location">📍 서울 중구</div>
+          <div class="card-desc">화폐의 역사와 경제 개념을 쉽게 배울 수 있는 박물관. 직접 돈을 세어보고 <strong>금괴를 만지는 체험</strong>이 아이들에게 흥미롭게 다가옴.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89%20%ED%99%94%ED%8F%90%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.9</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/%EC%84%9C%EB%8C%80%EB%AC%B8%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%A4%91%EC%95%99%ED%99%80.jpg/960px-%EC%84%9C%EB%8C%80%EB%AC%B8%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%A4%91%EC%95%99%ED%99%80.jpg" alt="서대문자연사박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">서대문자연사박물관</div>
+          <div class="card-location">📍 서울 서대문</div>
+          <div class="card-desc">공룡 화석부터 우주까지 아이들이 가장 좋아하는 <strong>자연사 박물관</strong>. 6m 대형 공룡 전신 골격과 지구 생명의 역사를 생생하게 볼 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-mixed">🎫 무료(만4세↓) / 3,000원(어린이)</span>
+            <a href="https://map.naver.com/v5/search/%EC%84%9C%EB%8C%80%EB%AC%B8%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 2: 경기·인천 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region2">
+    <div class="region-header" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">
+      🌾 경기·인천권역
+      <span class="region-count">6곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.10</span>
+          <img src="https://gcm.ggcf.kr/storage/upload/2025/04/11/yKem97hchwvQ3w5ZktDdYANmgVc9hCy1gIG44uYV.jpg" alt="경기도어린이박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">경기도어린이박물관</div>
+          <div class="card-location">📍 경기 용인</div>
+          <div class="card-desc">자연·건강·문화 등 5개 테마로 구성된 <strong>국내 최초 독립형 어린이박물관</strong>. 0~12세 어린이를 위한 200여 개 전시물 보유.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 4,000원 (어린이)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.11</span>
+          <img src="https://www.goyang.go.kr/visitgoyang/DATA/tourRsrc/20230117032825872_pUMm.jpg" alt="고양어린이박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">고양어린이박물관</div>
+          <div class="card-location">📍 경기 고양</div>
+          <div class="card-desc">자연·예술·놀이를 통합한 <strong>체험형 어린이박물관</strong>. 실내 놀이터와 다양한 창의 체험 공간이 갖춰져 있어 비 오는 날 방문하기 좋음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 5,000원 (36개월↑)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B3%A0%EC%96%91%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.12</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Gwacheon_National_Science_Museum_Garden.jpg/960px-Gwacheon_National_Science_Museum_Garden.jpg" alt="국립과천과학관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립과천과학관</div>
+          <div class="card-location">📍 경기 과천</div>
+          <div class="card-desc">우주·생명·첨단 과학 등을 체험할 수 있는 <strong>국내 최대 규모 과학관</strong>. 천체투영관과 야외 공룡 전시물이 특히 인기.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 2,000원 (어린이)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EA%B3%BC%EC%B2%9C%EA%B3%BC%ED%95%99%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.13</span>
+          <img src="https://www.insiseol.or.kr/culture/icsmuseum/img/contents/intro01_220722.jpg" alt="인천어린이과학관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">인천어린이과학관</div>
+          <div class="card-location">📍 인천</div>
+          <div class="card-desc">과학 원리를 놀이로 배우는 <strong>체험형 과학관</strong>. 물·빛·에너지 등 생활 속 과학 현상을 직접 조작하며 탐구할 수 있는 공간.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 2,000원 (어린이)</span>
+            <a href="https://map.naver.com/v5/search/%EC%9D%B8%EC%B2%9C%EC%96%B4%EB%A6%B0%EC%9D%B4%EA%B3%BC%ED%95%99%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.14</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Korea_Job_World_Children%27s_Experience_Area.jpg" alt="한국잡월드" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">한국잡월드</div>
+          <div class="card-location">📍 경기 성남</div>
+          <div class="card-desc">어린이들이 <strong>100여 가지 직업</strong>을 직접 체험해 볼 수 있는 직업 체험 특화 시설. 소방관·의사·요리사 등 실제 유니폼을 입고 역할 체험 가능.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 18,000원 (어린이 체험관)</span>
+            <a href="https://map.naver.com/v5/search/%ED%95%9C%EA%B5%AD%EC%9E%A1%EC%9B%94%EB%93%9C" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.15</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Korea_Manhwa_Museum.JPG/960px-Korea_Manhwa_Museum.JPG" alt="한국만화박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">한국만화박물관</div>
+          <div class="card-location">📍 경기 부천</div>
+          <div class="card-desc">만화의 역사와 문화를 전시하는 <strong>국내 유일 만화 전문 박물관</strong>. 어린이 만화 체험 공간이 알차고 유명 만화 캐릭터 전시가 풍부.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 5,000원 (36개월↑)</span>
+            <a href="https://map.naver.com/v5/search/%ED%95%9C%EA%B5%AD%EB%A7%8C%ED%99%94%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 3: 대전·충청 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region3">
+    <div class="region-header" style="background: linear-gradient(135deg, #10b981, #059669);">
+      🌿 대전·충청권역
+      <span class="region-count">4곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.16</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/National_Science_Museum_2021.jpg/960px-National_Science_Museum_2021.jpg" alt="국립중앙과학관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립중앙과학관</div>
+          <div class="card-location">📍 대전 유성구</div>
+          <div class="card-desc">과학기술 전반을 체험하는 <strong>국내 대표 과학관</strong>. 자연사관·창의나래관·어린이과학관 등 다양한 관이 있어 하루 종일 즐길 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-mixed">🎫 무료/일부 유료 (천체관 별도)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EC%A4%91%EC%95%99%EA%B3%BC%ED%95%99%EA%B4%80%20%EB%8C%80%EC%A0%84" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.17</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/%EC%A7%80%EC%A7%88%EB%B0%95%EB%AC%BC%EA%B4%80_Geological_Museum_KIGAM.jpg/960px-%EC%A7%80%EC%A7%88%EB%B0%95%EB%AC%BC%EA%B4%80_Geological_Museum_KIGAM.jpg" alt="지질박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">지질박물관</div>
+          <div class="card-location">📍 대전 유성구</div>
+          <div class="card-desc">지구 내부부터 화석·광물까지 지질 과학 전반을 체험하는 전문 박물관. <strong>공룡 발자국 화석</strong>과 다양한 광물 표본이 아이들의 눈길을 사로잡음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EC%A7%80%EC%A7%88%EB%B0%95%EB%AC%BC%EA%B4%80%20%EB%8C%80%EC%A0%84" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.18</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Gongju_National_Museum_2023.jpg/960px-Gongju_National_Museum_2023.jpg" alt="국립공주박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립공주박물관</div>
+          <div class="card-location">📍 충남 공주</div>
+          <div class="card-desc"><strong>백제의 찬란한 문화</strong>를 담은 무령왕릉 유물 중심의 국립 박물관. 금제관식 등 화려한 백제 유물을 가까이서 볼 수 있으며 어린이 체험 코너도 마련.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.19</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Buyeo_National_Museum_%2820160719_1%29.png/960px-Buyeo_National_Museum_%2820160719_1%29.png" alt="국립부여박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립부여박물관</div>
+          <div class="card-location">📍 충남 부여</div>
+          <div class="card-desc">백제 후기 문화의 정수를 담은 <strong>국립 박물관</strong>. 국보 금동대향로 등 백제 최고의 예술 작품을 가까이서 감상할 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EB%B6%80%EC%97%AC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 4: 강원 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region4">
+    <div class="region-header" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+      🌲 강원권역
+      <span class="region-count">3곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.20</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/%EA%B5%AD%EB%A6%BD%EC%B6%98%EC%B2%9C%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%A0%95%EB%A9%B4.jpg/960px-%EA%B5%AD%EB%A6%BD%EC%B6%98%EC%B2%9C%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%A0%95%EB%A9%B4.jpg" alt="국립춘천박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립춘천박물관</div>
+          <div class="card-location">📍 강원 춘천</div>
+          <div class="card-desc">강원 지역의 선사 문화부터 불교 문화까지 아우르는 <strong>국립 박물관</strong>. 어린이 체험 공간과 야외 조각 정원이 가족 방문객에게 인기.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EC%B6%98%EC%B2%9C%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.21</span>
+          <img src="https://minio.nculture.org/amsweb-opt/multimedia_assets/10/85456/87731/c/%EC%97%90%EB%94%94%EC%8A%A8%EA%B3%BC%ED%95%99%EB%B0%95%EB%AC%BC%EA%B4%80-%2810%29-medium-size.jpg" alt="참소리축음기에디슨과학박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">참소리축음기·에디슨과학박물관</div>
+          <div class="card-location">📍 강원 강릉</div>
+          <div class="card-desc">세계 최대 규모의 축음기 컬렉션과 <strong>에디슨의 발명품</strong>을 한자리에서 볼 수 있는 독특한 박물관. 소리의 역사를 체험하는 색다른 경험.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 유료 (변동)</span>
+            <a href="https://map.naver.com/v5/search/%EC%B0%B8%EC%86%8C%EB%A6%AC%EC%B6%95%EC%9D%8C%EA%B8%B0%EC%97%90%EB%94%94%EC%8A%A8%EA%B3%BC%ED%95%99%EB%B0%95%EB%AC%BC%EA%B4%80%20%EA%B0%95%EB%A6%89" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.22</span>
+          <img src="https://www.dmzmuseum.com/page/dmz/images/main/mainvisual-01.jpg" alt="DMZ박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">DMZ박물관</div>
+          <div class="card-location">📍 강원 고성</div>
+          <div class="card-desc">휴전선 인근에 위치한 <strong>분단의 역사</strong>를 담은 박물관. 실제 DMZ를 배경으로 평화와 통일 교육을 받을 수 있는 특별한 공간.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/DMZ%EB%B0%95%EB%AC%BC%EA%B4%80%20%EA%B3%A0%EC%84%B1" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 5: 전라·광주 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region5">
+    <div class="region-header" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+      🌊 전라·광주권역
+      <span class="region-count">3곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.23</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gwangju_National_Museum.jpg/960px-Gwangju_National_Museum.jpg" alt="국립광주박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립광주박물관</div>
+          <div class="card-location">📍 광주 북구</div>
+          <div class="card-desc">전라도 지역 유물과 남도 문화를 폭넓게 소개하는 <strong>국립 박물관</strong>. 어린이 전시실을 별도 운영하며 체험 교육 프로그램이 풍부.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EA%B4%91%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.24</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/%EA%B5%AD%EB%A6%BD%EB%82%98%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80-%ED%95%91%ED%81%AC%EB%AE%AC%EB%A6%AC-1.jpg/960px-%EA%B5%AD%EB%A6%BD%EB%82%98%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80-%ED%95%91%ED%81%AC%EB%AE%AC%EB%A6%AC-1.jpg" alt="국립나주박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립나주박물관</div>
+          <div class="card-location">📍 전남 나주</div>
+          <div class="card-desc">전남 지역 고대 문화와 <strong>마한·백제의 역사</strong>를 전시. 어린이 체험 공간이 잘 갖춰져 있으며 자연 친화적인 야외 전시도 풍부해 나들이 코스로 좋음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EB%82%98%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.25</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Jeonju_National_Museum.jpg/960px-Jeonju_National_Museum.jpg" alt="국립전주박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립전주박물관</div>
+          <div class="card-location">📍 전북 전주 완산구</div>
+          <div class="card-desc">전라북도의 역사와 문화유산을 풍부하게 전시한 <strong>국립 박물관</strong>. 어린이 체험 공간도 운영되어 전주 한옥마을과 연계한 가족 나들이 코스로 인기.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EC%A0%84%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 6: 경상·부산·대구 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region6">
+    <div class="region-header" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+      🏔️ 경상·부산·대구권역
+      <span class="region-count">4곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.26</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Korea-Gyeongju.National.Museum-02.jpg/960px-Korea-Gyeongju.National.Museum-02.jpg" alt="국립경주박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립경주박물관 어린이박물관</div>
+          <div class="card-location">📍 경북 경주</div>
+          <div class="card-desc">신라 문화를 어린이 눈높이로 풀어낸 <strong>체험 중심 박물관</strong>. 황금 보검·금관 등 신라 유물을 흥미롭게 배울 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EA%B2%BD%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80%20%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.27</span>
+          <img src="https://image.xn--ok0b236bp0a.com/content_travel/2890167853_rDPio0pV_eab45a08adb2865a24af3df5b4a53f34dc912b97.jpg" alt="국립부산과학관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립부산과학관</div>
+          <div class="card-location">📍 부산 기장군</div>
+          <div class="card-desc">자동차·항공·조선·에너지 등 <strong>산업기술을 체험</strong>하는 과학관. 3D 영상관과 놀이형 과학 체험 공간이 다양해 온 가족이 즐길 수 있음.</div>
+          <div class="card-footer">
+            <span class="price-badge price-paid">🎫 2,000원 (어린이)</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EB%B6%80%EC%82%B0%EA%B3%BC%ED%95%99%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.28</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gimhae_national_museum.JPG/960px-Gimhae_national_museum.JPG" alt="국립김해박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립김해박물관</div>
+          <div class="card-location">📍 경남 김해</div>
+          <div class="card-desc">철의 나라 <strong>가야 문화</strong>를 소개하는 국립 박물관. 가야 철기 문화와 수로왕 신화를 쉽고 재미있게 볼 수 있는 공간.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EA%B9%80%ED%95%B4%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.29</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Daegu_National_Museum.jpg/960px-Daegu_National_Museum.jpg" alt="국립대구박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">국립대구박물관</div>
+          <div class="card-location">📍 대구 수성구</div>
+          <div class="card-desc">영남 지역 역사와 문화를 아우르는 <strong>국립 박물관</strong>. 어린이 전시 공간과 넓은 야외 정원이 잘 갖춰져 있어 가족 방문에 적합.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EA%B5%AD%EB%A6%BD%EB%8C%80%EA%B5%AC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- REGION 7: 제주 -->
+  <!-- ══════════════════════════════ -->
+  <div class="region" id="region7">
+    <div class="region-header" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+      🌺 제주권역
+      <span class="region-count">1곳</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <span class="card-num">No.30</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%EB%AF%BC%EC%86%8D%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%9E%85%EA%B5%AC.jpg/960px-%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%EB%AF%BC%EC%86%8D%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%9E%85%EA%B5%AC.jpg" alt="제주민속자연사박물관" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-title">제주민속자연사박물관</div>
+          <div class="card-location">📍 제주 제주시</div>
+          <div class="card-desc">제주의 자연 생태와 민속 문화를 한자리에서 볼 수 있는 박물관. <strong>테우·돌하르방·해녀 문화</strong>를 어린이도 알기 쉽게 전시.</div>
+          <div class="card-footer">
+            <span class="price-badge price-free">🎫 무료</span>
+            <a href="https://map.naver.com/v5/search/%EC%A0%9C%EC%A3%BC%EB%AF%BC%EC%86%8D%EC%9E%90%EC%97%B0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="map-btn">🗺️ 네이버 지도</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER CALLOUT -->
+  <div class="footer-callout">
+    혹시 보시고, 궁금한 점이나 고민되는 부분 있으시면 편하게 DM 주세요 💕<br>
+    늦더라도 꼭 확인하고, 답변 드리고 있답니다! (DM 주고받으면 친밀감도 올라간다구요~ 😆)<br><br>
+    이번 자료 활용해보시고, 도움이 조금이라도 되셨다면<br>
+    앞으로 올라오는 투빈맘 피드에도 <strong>"좋아요나 댓글"</strong>로 함께해주시면, 저한테 큰 힘이 돼요 💖💖💖<br><br>
+    <a href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" class="footer-ig">
+      📸 인스타그램 @2bin_mom 바로가기
+    </a>
+  </div>
+
+  <!-- NOTION BAR BOTTOM -->
+  <div class="notion-bar-bottom">
+    <span>📝 이 자료의 노션 원본도 함께 확인해보세요!</span>
+    <a href="https://app.notion.com/p/390a9b27793981f88425fa7d332af83d" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="white" fill-opacity="0.2"/><path d="M6 5.5C6 4.67 6.67 4 7.5 4H16.5C17.33 4 18 4.67 18 5.5V18.5C18 19.33 17.33 20 16.5 20H7.5C6.67 20 6 19.33 6 18.5V5.5Z" fill="white"/><path d="M9 8H15M9 11H15M9 14H13" stroke="#37352f" stroke-width="1.5" stroke-linecap="round"/></svg>
+      노션 원본 바로가기
+    </a>
+  </div>
+
+  <div class="copyright">
+    ⚠️ 본 자료는 투빈맘이 직접 정리한 콘텐츠입니다. 무단 복제·캡처·배포 금지 🚫<br>
+    상업적 활용 시 법적 조치가 이루어질 수 있습니다. © 2026 투빈맘 / 인스타 @2bin_mom
+  </div>
+
+</div>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
