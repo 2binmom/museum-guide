@@ -404,6 +404,98 @@
     .toc-grid { grid-template-columns: 1fr 1fr; }
     .card-footer { flex-wrap: wrap; }
   }
+
+  /* ── 도장깨기 진행현황 ── */
+  .progress-box {
+    background: white;
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 24px;
+    border-top: 4px solid var(--primary);
+  }
+  .progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .progress-top .progress-count { color: var(--primary); }
+  .progress-track {
+    width: 100%;
+    height: 12px;
+    background: var(--primary-light);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6b9d, #c084fc);
+    border-radius: 999px;
+    transition: width 0.35s ease;
+  }
+  .progress-reset {
+    display: inline-block;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+  .progress-reset:hover { color: var(--primary); }
+
+  /* ── 방문 체크 토글 버튼 ── */
+  .visit-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    border: 1.5px solid #d8dee8;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .visit-toggle:hover { border-color: var(--primary); color: var(--primary); }
+  .visit-toggle.checked {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+  }
+  .visit-toggle.checked:hover { background: #16a34a; }
+
+  /* ── 방문 완료 카드 ── */
+  .card.visited { border: 2px solid #86efac; }
+  .card.visited .card-title { text-decoration: line-through; color: #94a3b8; }
+  .card.visited .card-desc { color: #a3adba; }
+  .card-img-wrap .visited-stamp {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    transform: rotate(-14deg);
+    border: 3px solid #16a34a;
+    color: #16a34a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.9);
+    z-index: 2;
+  }
+  .card.visited .visited-stamp { display: block; }
 </style>
 </head>
 <body>
@@ -451,6 +543,18 @@
       <a href="#region6" class="toc-item">🏔️ 경상·부산·대구권역<span class="count">4곳</span></a>
       <a href="#region7" class="toc-item">🌺 제주권역<span class="count">1곳</span></a>
     </div>
+  </div>
+
+  <!-- 도장깨기 진행현황 -->
+  <div class="progress-box">
+    <div class="progress-top">
+      <span>🎯 우리 아이 박물관 도장깨기</span>
+      <span class="progress-count" id="progressCount">0 / 0 완료</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <button class="progress-reset" id="progressReset" type="button">전체 초기화</button>
   </div>
 
   <div class="summary-bar">📌 총 <strong>30곳</strong> | 서울 9 · 경기인천 6 · 대전충청 4 · 강원 3 · 전라광주 3 · 경상부산대구 4 · 제주 1</div>
@@ -1061,6 +1165,84 @@
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 400);
   });
+</script>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'tubinmom_museum_visited_v1';
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.region .cards .card'));
+  var total = cards.length;
+  var visited = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+  var countEl = document.getElementById('progressCount');
+  var fillEl = document.getElementById('progressFill');
+  var resetBtn = document.getElementById('progressReset');
+
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(visited)));
+  }
+
+  function updateProgress() {
+    var n = visited.size;
+    countEl.textContent = n + ' / ' + total + ' 완료';
+    fillEl.style.width = (total ? (n / total * 100) : 0) + '%';
+  }
+
+  function renderToggle(btn, isVisited) {
+    btn.classList.toggle('checked', isVisited);
+    btn.textContent = isVisited ? '✅ 다녀왔어요' : '☑️ 다녀왔어요?';
+    btn.setAttribute('aria-pressed', isVisited ? 'true' : 'false');
+  }
+
+  cards.forEach(function (card, idx) {
+    var id = card.id || ('m' + (idx + 1));
+    card.id = id;
+    var imgWrap = card.querySelector('.card-img-wrap');
+    var footer = card.querySelector('.card-footer');
+    var mapBtn = card.querySelector('.map-btn');
+    var isVisited = visited.has(id);
+
+    var stamp = document.createElement('div');
+    stamp.className = 'visited-stamp';
+    stamp.textContent = '다녀왔어요!';
+    imgWrap.appendChild(stamp);
+
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'visit-toggle';
+    renderToggle(toggle, isVisited);
+    footer.insertBefore(toggle, mapBtn);
+
+    if (isVisited) card.classList.add('visited');
+
+    toggle.addEventListener('click', function () {
+      var nowVisited = !visited.has(id);
+      if (nowVisited) {
+        visited.add(id);
+      } else {
+        visited.delete(id);
+      }
+      card.classList.toggle('visited', nowVisited);
+      renderToggle(toggle, nowVisited);
+      save();
+      updateProgress();
+    });
+  });
+
+  resetBtn.addEventListener('click', function () {
+    if (!confirm('방문 체크를 모두 초기화할까요?')) return;
+    visited.clear();
+    save();
+    cards.forEach(function (card) {
+      card.classList.remove('visited');
+      var toggle = card.querySelector('.visit-toggle');
+      if (toggle) renderToggle(toggle, false);
+    });
+    updateProgress();
+  });
+
+  updateProgress();
+})();
 </script>
 
 </body>
