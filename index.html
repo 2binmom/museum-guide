@@ -323,6 +323,20 @@
     transition: opacity 0.15s, transform 0.15s;
   }
   .footer-ig:hover { opacity: 0.88; transform: scale(1.03); }
+  .hero-actions {
+    display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .hero-actions .footer-ig { margin-top: 0; }
+  .kakao-share-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #FEE500; color: #3A2A33;
+    text-decoration: none; border: none; cursor: pointer; font-family: inherit;
+    padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 700;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .kakao-share-btn:hover { opacity: 0.88; transform: scale(1.03); }
+  .kakao-share-btn.copied { background: var(--primary, #FF6B8B); color: #fff; }
 
   .copyright {
     text-align: center;
@@ -479,10 +493,11 @@
   <span class="hero-badge">🏛️ 투빈맘's 박물관 자료나눔</span>
   <h1>유치부·초등 저학년이<br>가기 좋은 박물관 30곳</h1>
   <p class="hero-sub">오감으로 체험하고 놀면서 자연스럽게 배우는 전국 박물관을 지역별로 정리했어요! 유치부(5~7세)부터 초등 저학년(1~3학년)까지 모두 즐길 수 있는 곳만 엄선✨</p>
-  <div style="margin-top:14px;">
+  <div class="hero-actions">
     <a href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" class="footer-ig">
       📸 인스타그램 @2bin_mom 바로가기
     </a>
+    <button type="button" class="kakao-share-btn" onclick="shareKakao(this)">💬 카톡으로 공유</button>
   </div>
 </div>
 
@@ -1123,6 +1138,31 @@
   });
 </script>
 
+<script>
+function shareKakao(btn){
+  var url = location.href;
+  if (navigator.share){
+    navigator.share({ title: document.title, url: url }).catch(function(){});
+    return;
+  }
+  var textarea = document.createElement("textarea");
+  textarea.value = url;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  var ok = false;
+  try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+  document.body.removeChild(textarea);
+  if (btn._resetTimer) clearTimeout(btn._resetTimer);
+  btn.classList.add("copied");
+  btn.textContent = ok ? "✅ 링크 복사완료!" : "🔗 " + url;
+  btn._resetTimer = setTimeout(function(){
+    btn.classList.remove("copied");
+    btn.textContent = "💬 카톡으로 공유";
+  }, ok ? 1800 : 4000);
+}
+</script>
 <script>
 (function () {
   var STORAGE_KEY = 'tubinmom_museum_visited_v1';
